@@ -7,7 +7,7 @@ const Header = () => {
         variant="h4"
         align="center"            
     >
-      Random Quote Generator: Testing automatic deployment workflow
+      Random Quote Generator
     </Typography>
   )
 }
