@@ -1,11 +1,20 @@
-import { Typography } from '@mui/material'
+import { Typography, Grid, Link } from '@mui/material'
 import React from 'react'
 
-const Footer = ({createdBy}) => {
+const Footer = ({createdBy, source}) => {
   return (
-    <Typography variant="subtitle1" align="center">
-      Created by: {createdBy}
-    </Typography>
+    <Grid container justifyContent="center">
+      <Grid item xs={6}>
+        <Typography variant="body2" align="center">
+          Created by {createdBy}
+        </Typography>
+      </Grid>
+      <Grid item xs={6}>
+        <Link href={source} align="center">
+          Source Code
+        </Link>
+      </Grid>
+    </Grid>
   );
 }
 

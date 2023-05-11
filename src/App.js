@@ -9,6 +9,7 @@ function App() {
     const [count, setCount] = useState(1);
     const [quotes, setQuotes] = useState([]);
     const maxCount = 10;
+    const sourceCodeUrl = "https://github.com/DLipson/random-quote-generator";
        
     const loadQuotes = async (category, count) => {
         const quotes = await fetchQuotes(category, count);
@@ -35,7 +36,7 @@ function App() {
           setCount={setCount}
           countLimit={maxCount}
         />
-        <Footer createdBy={"Dovid Lipson"} />
+        <Footer createdBy={"Dovid Lipson"} source={sourceCodeUrl}/>
       </Stack>
     </Container>
   );
