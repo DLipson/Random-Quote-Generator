@@ -27,7 +27,7 @@ function App() {
         <Header />
         <QuoteContainer
           quotes={quotes}
-          handleReloadClick={loadQuotes}
+          handleReloadClick={() => loadQuotes(category, count)}
         />
         <Options
           category={category}
