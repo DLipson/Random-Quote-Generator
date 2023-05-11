@@ -4,16 +4,18 @@ import React from 'react'
 const Footer = ({createdBy, source}) => {
   return (
     <Grid container justifyContent="center">
-      <Grid item xs={6}>
+        <Grid item xs={6}>
         <Typography variant="body2" align="center">
-          Created by {createdBy}
+            Created by {createdBy}
         </Typography>
-      </Grid>
-      <Grid item xs={6}>
-        <Link href={source} align="center">
-          Source Code
+        </Grid>
+        <Grid item xs={6}>
+        <Typography variant="body2" align='center'>
+        <Link href={source}  align='center'>
+            Source Code
         </Link>
-      </Grid>
+        </Typography>
+        </Grid>
     </Grid>
   );
 }
