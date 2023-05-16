@@ -1,24 +1,25 @@
 import { useState, useEffect } from "react";
 import { fetchQuotes } from "./Services/QuoteService";
-import { Header, QuoteContainer, Options, Footer } from "./Components/index";
+import { Header, QuoteContainer, Options, Footer } from "./Components";
 import { Stack, Container } from "@mui/material";
-
 
 function App() {    
     const [category, setCategory] = useState("");
     const [count, setCount] = useState(1);
     const [quotes, setQuotes] = useState([]);
+    const [loading, setLoading] = useState(false);
     const maxCount = 10;
     const sourceCodeUrl = "https://github.com/DLipson/random-quote-generator";
        
     const loadQuotes = async (category, count) => {
+        setLoading(true);
         const quotes = await fetchQuotes(category, count);
         setQuotes(quotes);
+        setLoading(false);
     };
 
     useEffect(() => {
         loadQuotes(category, count);
-        console.log("useEffect");
         }, [category, count]);
     
   return (
@@ -27,7 +28,9 @@ function App() {
         <Header />
         <QuoteContainer
           quotes={quotes}
+          loading={loading}
           handleReloadClick={() => loadQuotes(category, count)}
+          count={count}
         />
         <Options
           category={category}
@@ -36,7 +39,7 @@ function App() {
           setCount={setCount}
           countLimit={maxCount}
         />
-        <Footer createdBy={"Dovid Lipson"} source={sourceCodeUrl}/>
+        <Footer createdBy={"Dovid Lipson"} source={sourceCodeUrl} />
       </Stack>
     </Container>
   );
