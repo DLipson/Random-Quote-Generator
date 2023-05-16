@@ -26,18 +26,18 @@ function App() {
     <Container maxWidth="sm">
       <Stack spacing={2}>
         <Header />
-        <QuoteContainer
-          quotes={quotes}
-          loading={loading}
-          handleReloadClick={() => loadQuotes(category, count)}
-          count={count}
-        />
         <Options
           category={category}
           setCategory={setCategory}
           count={count}
           setCount={setCount}
           countLimit={maxCount}
+        />
+        <QuoteContainer
+          quotes={quotes}
+          loading={loading}
+          handleReloadClick={() => loadQuotes(category, count)}
+          count={count}
         />
         <Footer createdBy={"Dovid Lipson"} source={sourceCodeUrl} />
       </Stack>
