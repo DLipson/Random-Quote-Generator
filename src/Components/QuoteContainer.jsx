@@ -6,7 +6,7 @@ const QuoteContainer = ({quotes, loading, handleReloadClick, count}) => {
     <>
       {loading
         ? Array.from(new Array(count)).map(() => (
-            <Skeleton variant="rectangular" animation="wave" height={150} />
+            <Skeleton variant="rounded" animation="wave" height={150} />
           ))
         : quotes.map((quote, index) => (
             <Card key={index} sx={{ p: 2 }}>
