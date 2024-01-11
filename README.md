@@ -36,10 +36,6 @@ Usage
    Click the "Load New" button to generate new quotes.
    The app will retrieve quotes from the API based on the selected category and limit, and display them on the screen.
 
-Screenshots
-
-Screenshot 1
-Screenshot 2
 Credits
 
 The quotes used in this app were retrieved from [api-ninjas](https://api.api-ninjas.com/v1/quotes).
